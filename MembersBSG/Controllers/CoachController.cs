@@ -74,8 +74,10 @@ namespace BSG.WebUI.Controllers
                 //var fileName = Path.GetFileName(Image1.FileName);
                 var path = Server.MapPath("~/content/images/uploads");
                 //System.IO.File.Delete(path + "/Coach.jpg");
-                System.IO.File.Delete(path + "/" + vm.Image1Name);
-
+                if (System.IO.File.Exists(path + "/" + vm.FirstName + vm.SecondName + ".jpg"))
+                    {
+                    System.IO.File.Delete(path + "/" + vm.FirstName + vm.SecondName + ".jpg");
+                }
                 /*
                 FileInfo temp = new FileInfo(path + "/Coach.jpg");
                 if (temp.Exists) temp.Delete();
@@ -94,9 +96,11 @@ namespace BSG.WebUI.Controllers
                   Email=vm.Email,
                   PhoneNumber = vm.Phone,
                   TemplateID = vm.TemplateId,
-                   ProfileImage=vm.Image1Name
-                  
-            };
+                   ProfileImage= vm.FirstName + vm.SecondName + ".jpg"
+
+        };
+
+            vm.Image1Name = vm.FirstName + vm.SecondName + ".jpg";
 
             repository.Save(c);
 
@@ -107,7 +111,7 @@ namespace BSG.WebUI.Controllers
         public ActionResult BSGElite(string firstname , string secondname)
         {
 
-            var coach = repository.GetCoachById("3233975d-d96e-49a1-b340-35b96a2d283a");
+            var coach = repository.GetCoach(firstname, secondname);
 
             CoachViewModel vm = new CoachViewModel();
 

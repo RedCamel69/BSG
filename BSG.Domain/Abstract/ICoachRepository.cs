@@ -13,6 +13,8 @@ namespace BSG.Domain.Abstract
 
         Coach GetCoachById(string userId);
 
+        Coach GetCoach(string firstName, string secondName); 
+
         void Save(Coach c);
     }
 }
