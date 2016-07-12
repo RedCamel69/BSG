@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+
+<html>
+<head>
+
+    <title>JS - QC</title>
+
+</head>
+
+
+<body lang="en-GB" dir="ltr">
+
+
+    <h1>Broadband Provisioning - Quality Checking</h1>
+
+
+    <P>****************************************************************************</P>
+    <h2>Process Variables.</h2>
+    <p id="demo">Latest Business Rule / Condition Selected Will Be Displayed Here.</p>
+    <p id="demos">Signature.</p>
+    <P>**************************</P>
+
+    <h3>Telecoms</h3>
+    <p>BR 1 : Is the CLI with us ?</p>
+    <button type="rule1conditionr1c1" onclick="myFunctionr1c1()">Yes</button>
+    <button type="rule1conditionr1c2" onclick="myFunctionr1c2()">No</button>
+
+    <h3>Talk Talk Portal</h3>
+    <p>BR 2 : EstimatedAnnexADownstreamSpeed</p>
+    <button type="rule1conditionr2c1" onclick="myFunctionr2c1()">Greater Than 999 mbs</button>
+    <button type="rule1conditionr2c2" onclick="myFunctionr2c2()">Less Than 1,000 mbs</button>
+
+    <p>BR 3 : ExchangeCapacity Flag</p>
+    <button type="rule1conditionr3c1" onclick="myFunctionr3c1()">G</button>
+    <button type="rule1conditionr3c2" onclick="myFunctionr3c2()">A</button>
+    <button type="rule1conditionr3c3" onclick="myFunctionr3c3()">R</button>
+    <button type="rule1conditionr3c4" onclick="myFunctionr3c4()">Unset</button>
+
+    <p>BR 4 : ExchangeState</p>
+    <button type="rule1conditionr4c1" onclick="myFunctionr4c1()">Live</button>
+    <button type="rule1conditionr4c2" onclick="myFunctionr4c2()">Unplanned</button>
+
+    <p>BR 5 : ListOfTechnologyMessages</p>
+    <button type="rule1conditionr5c1" onclick="myFunctionr5c1()">No Issue</button>
+    <button type="rule1conditionr5c2" onclick="myFunctionr5c2()">DACS</button>
+    <button type="rule1conditionr5c3" onclick="myFunctionr5c3()">LLUSMPF</button>
+    <button type="rule1conditionr5c4" onclick="myFunctionr5c4()">LLUMPF</button>
+    <button type="rule1conditionr5c5" onclick="myFunctionr5c5()">LLUMPF+NGA</button>
+    <button type="rule1conditionr5c6" onclick="myFunctionr5c6()">GEA</button>
+    <button type="rule1conditionr5c7" onclick="myFunctionr5c7()">Multiline PBX</button>
+    <button type="rule1conditionr5c8" onclick="myFunctionr5c8()">Redcare</button>
+    <button type="rule1conditionr5c9" onclick="myFunctionr5c9()">Other Incompatable Product</button>
+    <button type="rule1conditionr5c10" onclick="myFunctionr5cA()">ISDN</button>
+
+    <p>BR 6 : NumberRangeHolder</p>
+    <button type="rule1conditionr6c1" onclick="myFunctionr6c1()">BT</button>
+    <button type="rule1conditionr6c2" onclick="myFunctionr6c2()">Talk Talk</button>
+    <button type="rule1conditionr6c3" onclick="myFunctionr6c3()">Sky</button>
+    <button type="rule1conditionr6c4" onclick="myFunctionr6c4()">Virgin</button>
+
+
+    <P>*************************************************************************</P>
+
+    <button onclick="checkSignature()">Check Signature</button>
+    <p id="demoz"></p>
+    <p id="demo1"></p>
+
+
+    <p id="demo30"></p>
+
+
+
+
+    <script>
+
+var provisioning1 = "0";
+var provisioning2 = "0";
+var provisioning3 = "0";
+var provisioning4 = "0";
+var provisioning5 = "0";
+var provisioning6 = "0";
+
+function myFunctionr1c1() {
+document.getElementById("demo").innerHTML = "Business Rule 1 - Condition 1";
+provisioning1 = "1";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+function myFunctionr1c2() {
+document.getElementById("demo").innerHTML = "Business Rule 1 - Condition 2";
+provisioning1 = "2"
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+function myFunctionr2c1() {
+document.getElementById("demo").innerHTML = "Business Rule 2 - Condition 1";
+provisioning2 = "1"
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+function myFunctionr2c2() {
+document.getElementById("demo").innerHTML = "Business Rule 2 - Condition 2";
+provisioning2 = "2"
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+function myFunctionr3c1() {
+
+document.getElementById("demo").innerHTML = "Business Rule 3 - Condition 1";
+provisioning3 = "1";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr3c2() {
+
+document.getElementById("demo").innerHTML = "Business Rule 3 - Condition 2";
+provisioning3 = "2";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr3c3() {
+
+document.getElementById("demo").innerHTML = "Business Rule 3 - Condition 3";
+provisioning3 = "3";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+
+function myFunctionr3c4() {
+
+document.getElementById("demo").innerHTML = "Business Rule 3 - Condition 4";
+provisioning3 = "4";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr4c1() {
+
+document.getElementById("demo").innerHTML = "Business Rule 4 - Condition 1";
+provisioning4 = "1";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr4c2() {
+
+document.getElementById("demo").innerHTML = "Business Rule 4 - Condition 2";
+provisioning4 = "2";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c1() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 1";
+provisioning5 = "1";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c2() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 2";
+provisioning5 = "2";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c3() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 3";
+provisioning5 = "3";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c4() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 4";
+provisioning5 = "4";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c5() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 5";
+provisioning5 = "5";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c6() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 6";
+provisioning5 = "6";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c7() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 7";
+provisioning5 = "7";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c8() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 8";
+provisioning5 = "8";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5c9() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition 9";
+provisioning5 = "9";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr5cA() {
+
+document.getElementById("demo").innerHTML = "Business Rule 5 - Condition A";
+provisioning5 = "A";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr6c1() {
+
+document.getElementById("demo").innerHTML = "Business Rule 6 - Condition 1";
+provisioning6 = "1";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr6c2() {
+
+document.getElementById("demo").innerHTML = "Business Rule 6 - Condition 2";
+provisioning6 = "2";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr6c3() {
+
+document.getElementById("demo").innerHTML = "Business Rule 6 - Condition 3";
+provisioning6 = "3";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+function myFunctionr6c4() {
+
+document.getElementById("demo").innerHTML = "Business Rule 6 - Condition 4";
+provisioning6 = "4";
+document.getElementById("demos").innerHTML = "Signature : " + provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+}
+
+
+
+
+
+
+
+
+
+
+function checkSignature() {
+var text;
+var signature = provisioning1 + provisioning2 + provisioning3 + provisioning4 + provisioning5 + provisioning6;
+document.getElementById("demo1").innerHTML = signature;
+
+switch(signature) {
+
+case "000000":
+text = "Process 001 : Signature 000000 - No Input.";
+document.getElementById("demoz").innerHTML = text;
+myFunctiona0();
+break;
+
+case "111111":
+text = "Process 008 : Signature 111111 - Action 001";
+document.getElementById("demoz").innerHTML = text;
+myFunctiona1();
+break;
+
+
+// add case here
+
+default:
+
+
+var text = "There is missing input";
+var text2 = "I have no actions for this case yet.";
+var i;
+//var flag = "0";
+
+
+for (i = 0; i < signature.length; i++) {
+if (signature[i] == 0)
+document.getElementById("demoz").innerHTML = text ;
+//	document.getElementById("demo3").innerHTML = i;
+// flag = "1";
+else
+document.getElementById("demoz").innerHTML = text2;
+}
+//	while flag == 0
+
+
+//text = "I have no actions for this case yet.";
+document.getElementById("demo30").innerHTML = i;
+}
+
+}
+
+
+
+
+
+
+
+function myFunctiona0() {
+window.alert("You are required to provide input.");
+}
+
+function myFunctiona1() {
+window.alert("You can now check open reach post code."+"\n"+"add line breaks to an alert box!");
+}
+
+function myFunctiona2() {
+window.alert("Action 2");
+}
+
+function myFunctiona3() {
+window.alert("Action 3");
+}
+
+function myFunctiona4() {
+window.alert("Action 4");
+}
+
+function myFunctiona5() {
+window.alert("Action 5");
+}
+
+function myFunctiona6() {
+window.alert("Action 6");
+}
+
+
+    </script>
+
+
+
+</body>
+
+
+</html>

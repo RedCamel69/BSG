@@ -1,0 +1,17 @@
+﻿@model BSG.WebUI.Models.CoachViewModel
+
+
+@{
+    Layout = null;
+}
+
+@if (@Model.TemplateId ==1){
+
+    @Html.Partial("_Template1", @Model)
+}
+else
+{
+    @Html.Partial("_Template2", @Model)
+}
+
+

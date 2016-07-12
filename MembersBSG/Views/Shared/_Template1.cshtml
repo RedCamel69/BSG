@@ -1,0 +1,78 @@
+﻿@model BSG.WebUI.Models.CoachViewModel
+
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BSG Coaches</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <style type="text/css">
+        body{
+            background-color: green;
+            color: white;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+         img{
+                border-style: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+        max-width: 200px;
+    max-height: 300px;
+        }
+
+           body {
+        background: url('../../Content/images/bglogin.jpg') no-repeat center center fixed; 
+         -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    }
+    </style>
+    
+    <div style="text-align:center">
+        <h4>BSG Coaches Template 1</h4>
+        <hr />
+        <div class="row">
+            <img src="~/Content/images/template1/bglogo.png" />
+            <img src="@Model.Image1Path" />
+        </div>
+        <hr/>
+        <div class="row">
+            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.SecondName)
+        </div>
+        
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Phone)
+            @Html.DisplayFor(model => model.Phone)
+            </div>
+
+            <div class="row">
+                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayFor(model => model.Email)
+                </div>
+
+            <div class="row">
+                @Html.DisplayNameFor(model => model.TemplateId)
+                @Html.DisplayFor(model => model.TemplateId)
+            </div>
+  </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Coach Index</h2>
+
+<h3>From this screen the coach could be able to update personal, contact, social media details for display on hosted page</h3>
+
+@Html.DropDownList("TemplateType")
+
+    <h3>Coach's hosted page available at, for example <a href="../BSGCoach/@ViewBag.FirstName/@ViewBag.SecondName">BSGCoach/@ViewBag.FirstName/@ViewBag.SecondName</a></h3>
+
+
+
+<script type="text/javascript">
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    document.getElementById("TemplateType").onchange = function () {
+        setCookie("template", document.getElementById("TemplateType").options[document.getElementById("TemplateType").selectedIndex].value);
+    }
+</script>

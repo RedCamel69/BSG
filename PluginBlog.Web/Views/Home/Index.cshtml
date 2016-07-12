@@ -1,0 +1,26 @@
+﻿@using PluginBlog.Web.Helpers
+@model List<PluginBlog.Core.Entities.Post>
+@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>PluginBlog</h1>
+    <p class="lead">A non intrusive MVC5 blog for your website.</p>
+    <p><a href="@Url.Action("Index","Post", new { Area = "BlogAdmin"})" class="btn btn-primary btn-large">Go to the admin area (username: admin | password: demo) &raquo;</a></p>
+</div>
+
+<div class="row">
+    
+    @foreach (var post in Model)
+    {
+        <div class="col-md-4">
+            <h2>@post.Title</h2>
+            <p>
+                @Html.Raw(post.ShortDescription)
+            </p>
+            <p><a class="btn btn-default" href="@Url.PostLink(post)">Learn more &raquo;</a></p>
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model BSG.WebUI.Models.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    //if (this.User.IsInRole("Student") || !this.User.Identity.IsAuthenticated)
+    if (this.User.IsInRole("Student") )
+    {
+        Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<style>
+    body {
+        background: url('../../Content/images/bglogin.jpg') no-repeat center center fixed; 
+         -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    }
+
+    .jumbotron{
+          opacity: 0.9;
+    margin: 20px;
+    background-color: cornflowerblue;
+    }
+
+    
+</style>
+
+
+    <div class="jumbotron">
+        <h1>BSG Members Area</h1>
+        <p class="lead">BSG Demo Members Area.</p>
+        <p><a href="/Account/Login" class="btn btn-primary btn-lg">Log In &raquo;</a></p>
+
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4" style="color:white">
+            <h2>@Model.Posts.First().Title</h2>
+            <p class="lead">@Model.ScrubHtml(Model.Posts.First().ShortDescription)</p>
+            <p><a class="btn btn-default" href="/Blog">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4" style="color:white">
+            <h2>Getting started</h2>
+            <p class="lead">BSG Demo Members Area.</p>
+            <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;></a></p>
+        </div>
+        <div class="col-md-4" style="color:white">
+            <h2>Getting started</h2>
+            <p class="lead">BSG Demo Members Area.</p>
+            <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;</a></p>
+        </div>
+    </div>

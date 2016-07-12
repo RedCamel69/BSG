@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "BSGElite";
+}
+
+<h2>BSGElite</h2>
+
+
+coach page for @ViewBag.FirstName @ViewBag.SecondName using template @ViewBag.TemplateType
+
+
+<script type="text/javascript">
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    var ck = getCookie("template");
+
+
+    if (ck === "1") {
+        //red!
+        document.body.style.backgroundColor = "red";
+
+    }
+    else {
+        document.body.style.backgroundColor = "blue";
+    }
+
+</script>

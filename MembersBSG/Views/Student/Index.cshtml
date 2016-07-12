@@ -1,0 +1,133 @@
+﻿@model BSG.WebUI.Models.StudentViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+</script>
+
+<style type="text/css">
+    .modal-dialog {
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  padding: 0;
+ 
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+</style>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Student Marketing Splash Page</h4>
+            </div>
+            <div class="modal-body">
+                <p>This is a large modal.</p>
+
+                <p>Hi @Model.FirstName</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <h2>Student Page</h2>
+
+    <div class="alert alert-info" role="alert">
+        Here we can implement student functions - accessing training materials, contacting coaches etc.
+    </div>
+
+
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <p><span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#collapse2">Your articles</a></p>
+                    </h4>
+                </div>
+
+                <div id="collapse2" class="panel-collapse collapse">
+             
+                           <div class="panel-body">
+                        <ul class="list-group">
+                            @foreach (var r in Model.Resources)
+                            {
+
+                            if (r.ResourceType == 1) //doc
+                            {
+
+                            }
+                            <li class="list-group-item">
+                                <a href="@r.Path">@r.Name</a>
+                            <span class="label label-success">New</span>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+
+
+                    
+                    <div class="panel-footer">Keep checking for latest content</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <p><span class="glyphicon glyphicon-film"></span>   <a data-toggle="collapse" href="#collapse1">Your videos</a></p>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Great putting
+                            <span class="label label-success">New</span>
+                        </li>
+                        <li class="list-group-item">
+                            Essential Guide to Equipment
+                            <span class="label label-success">New</span>
+                        </li>
+                        <li class="list-group-item">
+                            The Pyschology of a Winner
+                            <span class="label label-danger">Watched</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">Keep checking for latest content</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
