@@ -17,5 +17,11 @@ namespace BSG.Tests
 
             //var first = s.Find(sId == "2eaf2db4-5a35-45ad-b787-3ba2bd748591");
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
