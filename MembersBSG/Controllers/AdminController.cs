@@ -7,25 +7,32 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using BSG.Domain.Abstract;
+using BSG.Domain;
+using BSG.Domain.Entities;
 
 namespace BSG.WebUI.Controllers
 {
     public class AdminController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();
+        private ICoachRepository coachRepository;
+
+        public AdminController(ICoachRepository @object)
+        {
+            this.coachRepository = @object;
+        }
 
         // GET: Admin
         [Authorize(Roles ="Admin")]
         public ActionResult Index(AdminViewModel vm)
         {
 
-            
-            vm.Coaches = new List<IdentityUser>();
+            vm.Coaches = new List<Coach>();
+
             vm.Students = new List<IdentityUser>();
 
             var roles = context.Roles.ToList();
-
-
 
             var testRole = context.Roles.First(r => r.Name == "Coach");
 
@@ -42,7 +49,10 @@ namespace BSG.WebUI.Controllers
             {
 
                 // vm.testUsers.Add(new IdentityUser() { UserName = u.UserName });
-                vm.Coaches.Add(new IdentityUser() { UserName = u.UserName });
+                //vm.Coaches.Add(new Coach() { UserName = u.UserName });
+
+                vm.Coaches.Add(coachRepository.Coaches.First(x=>x.UserName== u.UserName) );
+
 
             }
 

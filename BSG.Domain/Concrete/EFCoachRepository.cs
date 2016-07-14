@@ -14,7 +14,12 @@ namespace BSG.Domain.Concrete
 
         public IEnumerable<Coach> Coaches
         {
+
+            
+
             get {
+
+                var list = context.AspNetRoles.ToList();
 
                 List<Coach> coaches = new List<Coach>();
 

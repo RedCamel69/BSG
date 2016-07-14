@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using BSG.Domain;
+using BSG.Domain.Entities;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ namespace BSG.WebUI.Models
 {
     public class AdminViewModel
     {
-        public List<IdentityUser> Coaches { get; set; }
+        public List<Coach> Coaches { get; set; }
         public List<IdentityUser> Students { get; set; }
     }
 }
