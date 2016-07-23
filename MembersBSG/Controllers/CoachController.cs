@@ -66,7 +66,7 @@ namespace BSG.WebUI.Controllers
         [HttpPost]
         public ActionResult Index(CoachViewModel vm, HttpPostedFileBase Image1)
         {
-           Session["vm"] = vm;
+           //Session["vm"] = vm;
 
             if (Image1 != null && Image1.ContentLength > 0)
             {
@@ -101,6 +101,9 @@ namespace BSG.WebUI.Controllers
         };
 
             vm.Image1Name = vm.FirstName + vm.SecondName + ".jpg";
+            //vm.Image1Path = Server.MapPath("~/content/images/uploads") + "/" + vm.FirstName + vm.SecondName + ".jpg";
+
+            vm.Image1Path = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "/content/images/uploads/" + vm.Image1Name;
 
             repository.Save(c);
 

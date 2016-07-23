@@ -34,31 +34,134 @@
     
 </style>
 
-
-    <div class="jumbotron">
-        <h1>BSG Members Area</h1>
-        <p class="lead">BSG Demo Members Area.</p>
-        <p><a href="/Account/Login" class="btn btn-primary btn-lg">Log In &raquo;</a></p>
-
-
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-md-4" style="color:white">
-            <h2>@Model.Posts.First().Title</h2>
-            <p class="lead">@Model.ScrubHtml(Model.Posts.First().ShortDescription)</p>
-            <p><a class="btn btn-default" href="/Blog">Learn more &raquo;</a></p>
+<!-- ******PROMO****** -->
+<section id="promo" class="promo section offset-header">
+    <div class="container text-center">
+        <h2 class="title">bitesize<span class="highlight">Golf</span></h2>
+        <p class="intro">
+            Beginners Become Winners
+        </p>
+    
+        <div class="btns">
+            <a class="btn btn-cta-secondary" href="/Account/Login" target="_blank">Login</a>
+            <!--<a class="btn btn-cta-primary" href="http://themes.3rdwavemedia.com/website-templates/devaid-free-bootstrap-theme-developers/" target="_blank">Coach Login</a>-->
         </div>
-        <div class="col-md-4" style="color:white">
-            <h2>Getting started</h2>
-            <p class="lead">BSG Demo Members Area.</p>
-            <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;></a></p>
+    
+        <ul class="meta list-inline">
+            <!--<li><a href="https://github.com/xriley/devAid-Theme" target="_blank">View on GitHub</a></li>
+            <li><a href="http://themes.3rdwavemedia.com/website-templates/devaid-free-bootstrap-theme-developers/" target="_blank">Full Documentation</a></li>
+            <li>Created by: <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> at 3rd Wave Media</li>
+                -->
+        </ul><!--//meta-->
+    </div><!--//container-->
+</section><!--//promo-->
+
+
+
+<!-- ******ABOUT****** -->
+<section id="about" class="about section">
+    <div class="container">
+        <h2 class="title text-center">Welcome to Bitesize Golf.</h2>
+        <p class="intro text-center">The new and exciting series of golf development programmes that create the most comprehensive golf education for young golfers. Whether you're a parent, a school teacher or a golf coach, there are huge benefits and opportunities in getting involved and getting more young people playing the game and learning the important life skills that it actively encourages.
+
+There's so much to Bitesize Golf, have a good look around and please visit regularly as more clubs and coaches come on board, more events are added and more excting news announced.
+
+        
+    </div><!--//container-->
+</section><!--//about-->
+
+<!-- ******ABOUT FEATURES****** -->
+<section id="aboutFeatures" class="features section">
+    <div class="container text-center">
+        <h2 class="title">Get in touch if you're....</h2>
+        <ul class="feature-list list-unstyled">
+            <li><i class="fa fa-check"></i>A golf coach wanting to create, build and grow an incredible junior academy</li>
+            <li><i class="fa fa-check"></i>A golf club official wanting to have the very best junior programme in place at your club</li>
+            <li><i class="fa fa-check"></i>A parent who would like their young golfer to receive the best coaching and the best golf education</li>
+            <li><i class="fa fa-check"></i>A school teacher who wants to learn how to introduce golf in your school and learn how to teach the basics</li>
+            <li><i class="fa fa-check"></i>A business person who might like to sponsor the development of junior golf globally</li>
+            <li><i class="fa fa-check"></i>A person of influence in a golfing organisation who really want to 'grow the game'</li>
+        </ul>
+
+        
+       
+
+    </div><!--//container-->
+</section><!--//features-->
+
+<section id="aboutDocs" class="docs section">
+    <div class="container">
+        <div class="docs-inner">
+            <h2 class="title text-center">Get Started</h2>
+            <div class="block">
+                <p>Take a look at this document for more information on what Bitesize Golf is all about and how it can provide you, your club and the game of golf with a fantastic coaching solution.</p>
+                <p class="text-center"><a href="~/Content/bitesizegolf_overview.pdf"><img src="~/Content/images/BSG-Overview-doc-2015.jpg" alt="Bitesize Golf overview document" width="181" height="256" border="1"></a></p>
+            </div><!--//block-->      
+        </div><!--//docs-inner-->
+    </div><!--//container-->
+</section><!--//features-->
+
+
+
+<!--NEWS-->
+<section class="about section">
+
+    <div class="container">
+        <div class="docs-inner">
+            <div class="col-xs-12 col-md-4">
+                <h2>@Model.Posts.First().Title</h2>
+                <p class="lead">@Model.ScrubHtml(Model.Posts.First().ShortDescription)</p>
+                <p><a class="btn btn-default" href="/Blog">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Getting started</h2>
+                <p class="lead">BSG Demo Members Area.</p>
+                <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;></a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Getting started</h2>
+                <p class="lead">BSG Demo Members Area.</p>
+                <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;</a></p>
+            </div>
         </div>
-        <div class="col-md-4" style="color:white">
-            <h2>Getting started</h2>
-            <p class="lead">BSG Demo Members Area.</p>
-            <p><a class="btn btn-default" href="/Account/Login">Learn more &raquo;</a></p>
         </div>
-    </div>
+</section>
+
+
+<!-- ******CONTACT****** -->
+<section id="contact" class="contact section has-pattern">
+    <div class="container">
+        <div class="contact-inner">
+            <h2 class="title  text-center">Contact</h2>
+            <p class="intro  text-center">I hope you find this Bootstrap template useful. <br />Feel free to get in touch if you have any questions or suggestions.</p>
+            <div class="author-message">
+                <div class="profile">
+                    <img class="img-responsive" src="~/Content/images/dg_cutout_web.gif" alt="" />
+                   
+                </div><!--//profile-->
+                <div class="speech-bubble">
+                    <h3 class="sub-title">Want to get more freebies in the future?</h3>
+                   <p>Please get in touch or follow us...
+if you would like any further information regarding Bitesize Golf and how to get onto a course or become an instructor, please fill out the form and we'll get straight back to you.</p>
+                  
+                </div><!--//speech-bubble-->
+            </div><!--//author-message-->
+            <div class="clearfix"></div>
+            <div class="info text-center">
+                <h4 class="sub-title">Get Connected</h4>
+                <ul class="social-icons list-inline">
+                    <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="http://instagram.com"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://dribbble.com"><i class="fa fa-dribbble"></i></a></li>
+                    <li class="last"><a href="mailto:dave@bitesizegolf.com"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div><!--//info-->
+        </div><!--//contact-inner-->
+    </div><!--//container-->
+</section><!--//contact-->
+
+  
+
+   

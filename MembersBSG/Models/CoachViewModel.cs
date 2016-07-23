@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace BSG.WebUI.Models
 {
@@ -9,11 +10,13 @@ namespace BSG.WebUI.Models
     {
         
         public string ID { get; set; }
+        
+        [DisplayAttribute(Name ="First Name")]
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        [System.ComponentModel.DataAnnotations.Range(1,2)]
+        [Range(1,2)]
         public int? TemplateId { get; set; }
         public string Image1Name { get; set; }
         public string Image1Path { get; set; }

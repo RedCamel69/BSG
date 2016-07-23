@@ -11,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
 </head>
 <body>
     <br />
@@ -22,7 +23,7 @@
     
     <br />
 
-        @using (Html.BeginForm("Index", "Coach", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Index", "Coach", FormMethod.Post, new { enctype = "multipart/form-data" , id="coachForm"}))
 
         {
             @Html.AntiForgeryToken()
@@ -59,7 +60,7 @@
                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @max="2", @min="1" })
                     </div>
                 </div>               
 
@@ -71,17 +72,18 @@
                     </div>
                 </div>
 
-               
-
-                
-               
-
+                                           
                 <div class="form-group">
                     @Html.Label("Image", new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        <input type="file" id="Image1" name="Image1" />
-                        <img id="Image1Image" name="Image1Image" width="200" alt="your image" src="@Model.Image1Path" />
+                        <input type="file" id="Image1" name="Image1" onchange="readURL(this);"/>
+                        <br />
+                        <img id="Image1Image" name="Image1Image" alt="your image" src="@Model.Image1Path" style="width:auto;max-width:300px" />
                         <!--<input type="text" id="Image1Name" name="Image1Name" />-->
+
+                        <h3 id="NewImageHeader" class="hidden">New Image</h3>
+                        <img id="blah" src="#" alt="your image"  class="hidden" style="width:auto;max-width:300px"/>
+
                     </div>
                 </div>
 
@@ -89,6 +91,9 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Save" class="btn btn-default" />
+
+                        <input type="submit" value="Cancel" class="btn btn-danger" />
+
                     </div>
                 </div>
             </div>
@@ -100,10 +105,42 @@
                 Click save and and click the link below to see changes relected in hosted page (opens in new tab)
             </div>
 
-            <h3>Coach's hosted page available at, for example <a href="../../BSGCoach/@Model.FirstName/@Model.SecondName" target="_blank">BSGCoach/@Model.FirstName/@Model.SecondName</a></h3>
+            <h3>Coach's hosted page available at <a href="../../BSGCoach/@Model.FirstName/@Model.SecondName" target="_blank">BSGCoach/@Model.FirstName/@Model.SecondName</a></h3>
 
 
                      
         </div>
+
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        /*.width(150)
+                        .height(200)*/
+                        .removeClass("hidden").addClass("show");
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+
+                $("#NewImageHeader").removeClass("hidden");
+                $("#NewImageHeader").addClass("show");
+            }
+
+        }
+
+        $("#coachForm").on('submit', function () {
+            var $btn = $(document.activeElement);
+
+            if ($(document.activeElement).val() === "Cancel") {
+                alert("Cancel to be implemented");
+            }
+        }
+        );
+    </script>
 </body>
 </html>
