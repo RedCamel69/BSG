@@ -23,6 +23,47 @@
     
     <br />
 
+
+    <div>
+        <h1>Your Resources</h1>
+
+        <div class="container">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <p><span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#collapse2">Admin Pack</a></p>
+                        </h4>
+                    </div>
+
+                    <div id="collapse2" class="panel-collapse collapse">
+
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                
+                                    <li class="list-group-item">
+                                        <a href="~/Content/Resources/AdminPack/dates and times_.pdf" target="_blank">Dates and Times</a>
+                                        <span class="label label-success">New</span>
+                                    </li>
+                                <li class="list-group-item">
+                                    <a href="~/Content/Resources/AdminPack/medical_form.pdf">Medical Form</a>
+                                    <span class="label label-success">New</span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                        <div class="panel-footer">Keep checking for latest content</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
         @using (Html.BeginForm("Index", "Coach", FormMethod.Post, new { enctype = "multipart/form-data" , id="coachForm"}))
 
         {
