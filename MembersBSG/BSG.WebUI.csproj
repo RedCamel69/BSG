@@ -224,6 +224,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -679,6 +680,8 @@
     </Content>
     <Content Include="Views\Account\RegisterAsACoach.cshtml" />
     <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Subscribe\Index.cshtml" />
+    <Content Include="Views\Subscribe\IPN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Coach\" />
