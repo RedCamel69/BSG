@@ -5,30 +5,29 @@
 }
 
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-</head>
-<body>
-    <br />
-
-    <div class="alert alert-info" role="alert">
+<section id="coachDetails" class="offset-header">
+    
+    <div class="alert alert-info hide" role="alert">
         Here we have a demo page where coaches could update their profiles, selected templates to be reflected in real time in the hosted page linked at the bottom of the page.
         In this demo the coach can select templateid 1 or 2 and upload an image (preferably of themselves!) which will be reflected on the hosted page.
     </div>
     
-    <br />
 
+    @if (@Model.Subscriber ){
+        <h1>You're a subscriber - thanks!</h1>
+    }
+    else
+    {
+        <button><a href="..\..\subscribe">Subscribe!</a></button>
 
-    <button><a href="~\subscribe">Subscribe!</a></button>
-    <div>
+    }
+
+    
+    <div >
         <h1>Your Resources</h1>
 
-        <div class="container">
+        <div class="container coachResources">
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -45,8 +44,18 @@
                             <ul class="list-group">
                                 
                                     <li class="list-group-item">
-                                        <a href="~/Content/Resources/AdminPack/dates and times_.pdf" target="_blank">Dates and Times</a>
-                                        <span class="label label-success">New</span>
+                                        @if (!Model.Subscriber)
+                                        {
+                                            <span>Dates and Times</span>
+                                            <span class="label label-danger">Subscriber Only!</span>
+                                            
+                                        }
+                                        else
+                                        {
+                                            <a href="~/Content/Resources/AdminPack/dates and times_.pdf" target="_blank">Dates and Times</a>
+                                            <span class="label label-success">Subscriber Only!</span>
+
+                                        }
                                     </li>
                                 <li class="list-group-item">
                                     <a href="~/Content/Resources/AdminPack/medical_form.pdf" target="_blank">Medical Form</a>
@@ -276,6 +285,11 @@
             }
         }
         );
+
+        $(".coachResources li").click(function () {
+            alert('Click');
+            event.stopPropagation();
+
+        });
     </script>
-</body>
-</html>
+</section>

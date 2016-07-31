@@ -7,6 +7,7 @@ using Microsoft.Owin.Security;
 using BSG.WebUI.Models;
 using System.Web.Security;
 using BSG.Domain.Entities;
+using System;
 
 namespace BSG.WebUI.Controllers
 {
@@ -158,7 +159,8 @@ namespace BSG.WebUI.Controllers
 
                 user.Referral = CoachReferral.Email.ToString();
 
-
+                user.Subscriber = false;
+                user.SubscriptionEnd = new DateTime(3000,1,1);
 
 
 
@@ -173,7 +175,7 @@ namespace BSG.WebUI.Controllers
                     account.UserManager.AddToRole(user.Id, "Coach");
 
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Coach");
+                    return RedirectToAction("Index", "Coach", new { id = user.Id });
                 }
                 else
                 {

@@ -78,7 +78,9 @@ namespace BSG.Domain.Concrete
                   Email=aspNetUserFromDb.Email,
                   PhoneNumber = aspNetUserFromDb.PhoneNumber,
                   TemplateID=aspNetUserFromDb.TemplateID,
-                  ProfileImage=aspNetUserFromDb.ProfileImage
+                  ProfileImage=aspNetUserFromDb.ProfileImage,
+                  Subscriber=aspNetUserFromDb.Subscriber,
+                  SubscriptionEnd=aspNetUserFromDb.SubscriptionEnd
             };
             return coach;
         }
@@ -93,6 +95,20 @@ namespace BSG.Domain.Concrete
             target.TemplateID = coach.TemplateID;
             target.ProfileImage = coach.ProfileImage;
             
+
+            context.SaveChanges();
+        }
+
+        public void SetSubscriberStatus(bool subscriber, DateTime expiry)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetSubscriberStatus(string userId, bool subscriber, DateTime expiry)
+        {
+            var target = context.AspNetUsers.Where(x => x.Id == userId).FirstOrDefault();
+            target.Subscriber = subscriber;
+            target.SubscriptionEnd = expiry;
 
             context.SaveChanges();
         }

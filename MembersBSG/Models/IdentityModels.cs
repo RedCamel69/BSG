@@ -30,6 +30,9 @@ namespace BSG.WebUI.Models
         //public CoachReferral Referral { get; set; }
         public string Referral { get; set; }
         public bool SendUpdates { get; set; }
+
+        public bool Subscriber { get; set; }
+        public System.DateTime SubscriptionEnd { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

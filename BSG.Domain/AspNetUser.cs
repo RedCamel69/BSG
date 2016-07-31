@@ -55,6 +55,8 @@ namespace BSG.Domain
         public string Referral { get; set; }
         public Nullable<int> TemplateID { get; set; }
         public string ProfileImage { get; set; }
+        public Nullable<bool> Subscriber { get; set; }
+        public Nullable<System.DateTime> SubscriptionEnd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }

@@ -10,6 +10,7 @@ using BSG.WebUI.Models;
 
 namespace BSG.Tests
 {
+    [TestClass]
     class AdminTests
     {
 

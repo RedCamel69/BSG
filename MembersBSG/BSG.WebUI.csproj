@@ -682,6 +682,9 @@
     <Content Include="Views\Shared\_Layout - Copy.cshtml" />
     <Content Include="Views\Subscribe\Index.cshtml" />
     <Content Include="Views\Subscribe\IPN.cshtml" />
+    <Content Include="Views\Subscribe\Success.cshtml" />
+    <Content Include="Views\Subscribe\Fail.cshtml" />
+    <Content Include="Views\Shared\_LayoutRegisterAsACoach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Coach\" />

@@ -93,6 +93,8 @@
           <Property Name="Referral" Type="nvarchar(max)" />
           <Property Name="TemplateID" Type="int" />
           <Property Name="ProfileImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subscriber" Type="bit" />
+          <Property Name="SubscriptionEnd" Type="datetime" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -447,7 +449,9 @@
           <Property Name="SendUpdates" Type="Boolean" Nullable="false" />
           <Property Name="Referral" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TemplateID" Type="Int32" />
-          <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subscriber" Type="Boolean" />
+          <Property Name="SubscriptionEnd" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -682,6 +686,8 @@
           <EntitySetMapping Name="AspNetUsers">
             <EntityTypeMapping TypeName="BSGEliteModel.AspNetUser">
               <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="SubscriptionEnd" ColumnName="SubscriptionEnd" />
+                <ScalarProperty Name="Subscriber" ColumnName="Subscriber" />
                 <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
                 <ScalarProperty Name="TemplateID" ColumnName="TemplateID" />
                 <ScalarProperty Name="Referral" ColumnName="Referral" />

@@ -54,12 +54,12 @@
                             -->
                         <!--<li class="nav-item">@Html.ActionLink("Blog", "Index", "Blog")</li>-->
                         <!--<li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>-->
-                        <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
-                        <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                        @*<li class="nav-item"><a class="scrollto" href="#about">About</a></li>
+                        <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>*@
 
                         
                     </ul><!--//nav-->
-                    @Html.Partial("_LoginPartial")
+                   
                 </div><!--//navabr-collapse-->
             </nav><!--//main-nav-->
         </div>
@@ -90,8 +90,7 @@
     </div>
         -->
 
-    <div class="container body-content">
-
+    <div class="container body-content" style="padding-top:5em">
         @RenderBody()
 
 
@@ -101,10 +100,9 @@
         <footer class="footer">
             <div class="container text-center">
                 <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">
-                    Copyright © Btesize Golf All Rights Reserved. No part of this web page may be reproduced in any way, or by any means, without the prior written permission of D Gosling.
-                    Privacy Note: All personal consumer information submitted through this web site will be held confidential within the company.
-                </small>
+                <small class="copyright">Copyright © Btesize Golf All Rights Reserved. No part of this web page may be reproduced in any way, or by any means, without the prior written permission of D Gosling.
+Privacy Note: All personal consumer information submitted through this web site will be held confidential within the company.
+</small>
             </div><!--//container-->
         </footer><!--//footer-->
 

@@ -16,5 +16,7 @@ namespace BSG.Domain.Abstract
         Coach GetCoach(string firstName, string secondName); 
 
         void Save(Coach c);
+
+        void SetSubscriberStatus(string userId,bool subscriber, DateTime expiry);
     }
 }

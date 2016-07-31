@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BSG.Domain.Concrete;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -11,11 +13,84 @@ namespace MembersBSG.Controllers
 {
     public class SubscribeController : Controller
     {
+        private EFCoachRepository repository;
+        private string Id { get; set; }
+
+        public SubscribeController(EFCoachRepository repo)
+        {
+            repository = repo;
+        }
+
         // GET: Subscribe
         public ActionResult Index()
         {
+           
+
+            
             return View();
         }
+
+
+        public ActionResult Success()
+        {
+
+            //tx=72F20110MY186281K&st=Completed&amt=1%2e00&cc=GBP&cm=&item_number=1000009
+
+            if (Request["item_number"] != null)
+            {
+                ViewBag.item_number = Request["item_number"].ToString();
+            }
+            else
+            {
+                ViewBag.item_number = "9999999999999999999999999999999999999";
+            }
+
+            var claimsIdentity = User.Identity as ClaimsIdentity;
+            if (claimsIdentity != null)
+            {
+                // the principal identity is a claims identity.
+                // now we need to find the NameIdentifier claim
+                var userIdClaim = claimsIdentity.Claims
+                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+
+                if (userIdClaim != null)
+                {
+                    var userIdValue = userIdClaim.Value;
+
+
+
+                    repository.SetSubscriberStatus(userIdValue, true, DateTime.Now.AddDays(365));
+
+                    ViewBag.userID = userIdValue;
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Fail()
+        {
+            var claimsIdentity = User.Identity as ClaimsIdentity;
+            if (claimsIdentity != null)
+            {
+                // the principal identity is a claims identity.
+                // now we need to find the NameIdentifier claim
+                var userIdClaim = claimsIdentity.Claims
+                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+
+                if (userIdClaim != null)
+                {
+                    var userIdValue = userIdClaim.Value;
+
+
+
+                   // repository.SetSubscriberStatus(userIdValue, true, DateTime.Now.AddDays(365));
+
+                    ViewBag.userID = userIdValue;
+                }
+            }
+            return View();
+        }
+
 
         public ActionResult IPN()
         {

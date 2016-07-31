@@ -29,6 +29,9 @@ namespace BSG.WebUI.Models
         public string Address_PostalCode { get; set; }
         public string Address_Country { get; set; }
 
+        public bool Subscriber { get; set; }
+        public Nullable<System.DateTime> SubscriptionEnd { get; set; }
+
     }
 
    

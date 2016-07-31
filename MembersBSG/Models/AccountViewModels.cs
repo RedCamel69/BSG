@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BSG.WebUI.Models
@@ -86,6 +87,7 @@ namespace BSG.WebUI.Models
         [Required]
         public bool RegisterNow { get; set; }
         public string WebSite { get; set; }
+        [Required]
         public string Email { get; set; }
         public string Phone { get; set; }
         public string MobilePhone { get; set; }
@@ -100,6 +102,9 @@ namespace BSG.WebUI.Models
         public CoachReferral Referral { get; set; }
 
         public bool SendUpdates { get; set; }
+        public DateTime SubscriptionEnd { get; set; }
+
+
         //sms, etc
 
     }

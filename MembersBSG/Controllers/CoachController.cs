@@ -42,6 +42,14 @@ namespace BSG.WebUI.Controllers
 
             vm.Image1Path = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "/content/images/uploads/" + coach.ProfileImage;
 
+            if(coach.Subscriber == true)
+            {
+                vm.Subscriber = true;
+            }
+            else
+            {
+                vm.Subscriber = false;
+            }
 
             List<SelectListItem> items = new List<SelectListItem>();
             items.Add(new SelectListItem
