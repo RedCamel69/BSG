@@ -153,7 +153,16 @@ namespace BSG.WebUI.Controllers
                 user.MobilePhone = vm.MobilePhone;
 
                 user.Address = new CoachAddress()
-                {AddressLine1 = vm.Address.AddressLine1};
+                {
+                    AddressLine1 = vm.Address.AddressLine1,
+                    AddressLine2=vm.Address.AddressLine2,
+                    AddressLine3=vm.Address.AddressLine3,
+                    City=vm.Address.City,
+                    Country = vm.Address.Country,
+                    County=vm.Address.County,
+                    PostalCode=vm.Address.PostalCode
+
+                };
                 user.Coach1 = vm.Coach1;
                 //user.Coach2 = vm.Coach2;
 
@@ -162,10 +171,7 @@ namespace BSG.WebUI.Controllers
                 user.Subscriber = false;
                 user.SubscriptionEnd = new DateTime(3000,1,1);
 
-
-
-//                user.Roles.Add(new IdentityUserRole() {  UserId=user.Id, RoleId= Roles.GetAllRoles(). })
-
+                //user.Roles.Add(new IdentityUserRole() {  UserId=user.Id, RoleId= Roles.GetAllRoles(). })
 
                 var result = await UserManager.CreateAsync(user, vm.Password);
                 if (result.Succeeded)

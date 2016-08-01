@@ -7,6 +7,5 @@ namespace BSG.WebUI.Models
     {
         public List<Post> Posts { get; set; }
 
-      
     }
 }
