@@ -24,8 +24,12 @@ namespace MembersBSG.HtmlHelpers.PhoneNumberValidation
             if (value != null) { }
             else
             {
-                var errorMessage = FormatErrorMessage(validationContext.DisplayName);
-                return new ValidationResult(errorMessage);
+                //if we decide phone is required we need to gen msg for empty value
+                //var errorMessage = FormatErrorMessage(validationContext.DisplayName);
+                //return new ValidationResult(errorMessage);
+
+                return ValidationResult.Success;
+
             }
 
             var phoneNumber = RemoveHyphens(RemoveSpaces(value.ToString()));

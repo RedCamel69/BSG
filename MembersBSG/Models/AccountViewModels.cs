@@ -95,20 +95,20 @@ namespace BSG.WebUI.Models
         [RegularExpression("^([a-zA-Z0-9_\\-\\.]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,100})$", ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please enter your phone number")]
-        [DataType(DataType.PhoneNumber)]
-        [EnforcePattern(ErrorMessage = "Please enter a valid phone number including area code if it’s a landline")]
-        //[MaxLength(16, ErrorMessage = "Please enter a valid phone number including area code if it’s a landline")]
-        [RegularExpression(@"^[0][0-9]{9,10}$", ErrorMessage = "Please enter a valid phone number including area code if it’s a landline")]
-        [ExcludeRadioTVDramaNumbers(ErrorMessage = "Please enter a valid phone number including area code if it’s a landline")]
-        [ExcludeCountryCodeNumbers(ErrorMessage = "No international numbers!")]
-        //[EnforceLength(ErrorMessage = "Phone Number must be 10,11 numbers long")]
-        [ExcludeNonDigits(ErrorMessage = "Please enter a valid phone number including area code")]
-        [ExcludeOFiveHundredRange(ErrorMessage = "Please enter a valid phone number including area code")]
+        ////[Required(ErrorMessage = "Please enter your phone number")]
+        //[DataType(DataType.PhoneNumber)]
+        //[EnforcePattern(ErrorMessage = "Please enter a valid phone number including area code")]
+        ////[MaxLength(16, ErrorMessage = "Please enter a valid phone number including area code if it’s a landline")]
+        //[RegularExpression(@"^[0][0-9]{9,10}$", ErrorMessage = "Please enter a valid phone number including area code")]
+        //[ExcludeRadioTVDramaNumbers(ErrorMessage = "Please enter a valid phone number")]
+        //[ExcludeCountryCodeNumbers(ErrorMessage = "No international numbers!")]
+        ////[EnforceLength(ErrorMessage = "Phone Number must be 10,11 numbers long")]
+        //[ExcludeNonDigits(ErrorMessage = "Please enter a valid phone number including area code")]
+        //[ExcludeOFiveHundredRange(ErrorMessage = "Please enter a valid phone number including area code")]
         public string Phone { get; set; }
 
-        [ExcludeNonDigits(ErrorMessage = "Please enter a valid mobile phone number")]
-        [ExcludeOFiveHundredRange(ErrorMessage = "Please enter a valid mobile phone number")]
+        //[ExcludeNonDigits(ErrorMessage = "Please enter a valid mobile phone number")]
+        //[ExcludeOFiveHundredRange(ErrorMessage = "Please enter a valid mobile phone number")]
         public string MobilePhone { get; set; }
         public string GolfFacilityName { get; set; }
 
