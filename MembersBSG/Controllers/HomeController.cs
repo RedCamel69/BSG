@@ -24,13 +24,13 @@ namespace BSG.WebUI.Controllers
 
             //var students = repo.Students.ToList();
 
-            var _repository = new BlogRepository(new BlogContext());
+            //var _repository = new BlogRepository(new BlogContext());
 
-            var model = _repository.Posts().OrderByDescending(x => x.PostedOn).Take(3).ToList();
+            //var model = _repository.Posts().OrderByDescending(x => x.PostedOn).Take(3).ToList();
             //var model = new PaginatedList<Post>(result, page ?? 0, PageSize);
 
             HomeIndexViewModel vm = new HomeIndexViewModel();
-            vm.Posts = model;
+            //vm.Posts = model;
 
 
             return View(vm);
