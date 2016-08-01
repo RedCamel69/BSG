@@ -236,6 +236,14 @@
     <Compile Include="Helpers\PluginBlogConfig.cs" />
     <Compile Include="Helpers\PostModelBinder.cs" />
     <Compile Include="Helpers\UrlActionExtensions.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\BaseTelephoneValidationAttribute.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\EnforceLength.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\EnforcePattern.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\EnforceRequired.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\Exclude0500Range.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeCountryCodeNumbers.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeNonDigits.cs" />
+    <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeRadioTVDramaNumbers.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
