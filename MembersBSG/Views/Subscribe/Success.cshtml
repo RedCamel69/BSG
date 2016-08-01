@@ -4,13 +4,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Success</h2>
-
-<a href="..\..\Coach\Index\@ViewBag.userID">Back to your coach page</a>
 
 
-<hr />
+<!-- ******SUCCESS****** -->
+<section id="promo" class="promo section offset-header" style="height: 95vh;">
+    <div class="container text-center">
+        <!--<h2 class="title">bitesize<span class="highlight">Golf</span></h2>-->
+        <p class="intro">
+            Congratulations, you have successfully subscribed
+        </p>
 
-@ViewBag.item_number
+        <p>
+            @ViewBag.item_number
 
-@ViewBag.userID
+            @ViewBag.userID
+        </p>
+
+        <div class="btns">
+            <a class="btn btn-cta-secondary" href="..\..\Coach\Index\@ViewBag.userID">Back to your coach page</a>
+        </div>
+
+    </div><!--//container-->
+</section><!--//promo-->

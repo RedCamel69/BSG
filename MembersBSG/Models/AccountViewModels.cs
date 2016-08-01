@@ -92,7 +92,7 @@ namespace BSG.WebUI.Models
         public string WebSite { get; set; }
         [Required]
         [Display(Name = "Email Address")]
-        [RegularExpression("^([a-zA-Z0-9_\\-\\.]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,100})$", ErrorMessage = "Please enter a valid email address")]
+        //[RegularExpression("^([a-zA-Z0-9_\\-\\.]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,100})$", ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
         ////[Required(ErrorMessage = "Please enter your phone number")]
