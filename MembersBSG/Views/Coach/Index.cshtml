@@ -57,6 +57,53 @@
 
                                         }
                                     </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Medical Form</span>
+                                            <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/AdminPack/medical_form_.pdf" target="_blank">Dates and Times</a>
+                                            <span class="label label-success">Subscriber Only!</span>
+
+                                    }
+                                </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Payment Form</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/AdminPack/payment_form.pdf" target="_blank">Dates and Times</a>
+                                        <span class="label label-success">Subscriber Only!</span>
+
+                                    }
+                                </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Registration Form</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/AdminPack/registration_form.pdf" target="_blank">Dates and Times</a>
+                                        <span class="label label-success">Subscriber Only!</span>
+
+                                    }
+                                </li>
+
+
                                 <li class="list-group-item">
                                     <a href="~/Content/Resources/AdminPack/medical_form.pdf" target="_blank">Medical Form</a>
                                     <span class="label label-success">New</span>
@@ -75,8 +122,15 @@
                         </div>
 
 
-
-                        <div class="panel-footer">Keep checking for latest content</div>
+@if (!Model.Subscriber)
+{
+    <div class="panel-footer">Thanks for being a subscriber</div>
+}
+else
+{
+    <div class="panel-footer">Subscribe now for latest content</div>
+}
+                      
                     </div>
 
 
