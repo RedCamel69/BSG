@@ -36,7 +36,7 @@ namespace MembersBSG.Controllers
 
             //tx=72F20110MY186281K&st=Completed&amt=1%2e00&cc=GBP&cm=&item_number=1000009
 
-            if (Request["item_number"] == null)
+            if (Request["item_number"] == null || Request["item_number"]!="2000009")
             {
                 return RedirectToAction("Fail");
                 //return View("Fail");

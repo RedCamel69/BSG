@@ -362,17 +362,48 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Yellow/Yellow full lesson plan_new.pdf" target="_blank">Full Plan</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Yellow/challenge sheet yellow.pdf" target="_blank">Yellow Challenge Sheet</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Full Plan</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Yellow/Yellow full lesson plan_new.pdf" target="_blank">Full Plan</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Yellow/yellow report.pdf" target="_blank">Yellow Report</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Full Plan</span>
+                                        <span class="label label-danger">Yellow Challenge Sheet</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Yellow/challenge sheet yellow.pdf" target="_blank">Yellow Challenge Sheet</a>
+                                        <span class="label label-success"></span>
+
+                                    }
+                                </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Full Plan</span>
+                                        <span class="label label-danger">Yellow Report</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Yellow/yellow report.pdf" target="_blank">Yellow Report</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                             </ul>
@@ -380,7 +411,7 @@
 
 
 
-                        <div class="panel-footer">Keep checking for latest content</div>
+                        <div class="panel-footer">Inspirational comment here</div>
                     </div>
 
 
