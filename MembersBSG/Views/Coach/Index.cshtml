@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <section id="coachDetails" class="offset-header">
 
     <div class="alert alert-info hide" role="alert">
@@ -20,7 +18,8 @@
     }
     else
     {
-        <button><a href="..\..\subscribe">Subscribe!</a></button>
+        <h1>You're not a subscriber...</h1>
+        <button><a href="..\..\subscribe">Subscribe Now!</a></button>
 
     }
 
@@ -35,13 +34,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-book"></span><a data-toggle="collapse" href="#collapse2" style="color: #17baef;padding-left:10px">  Admin Pack</a>
+                            <span class="glyphicon glyphicon-book"></span><a data-toggle="collapse" href="#admin" style="color: #17baef;padding-left:10px">  Admin Pack</a>
 
 
                         </h4>
                     </div>
 
-                    <div id="collapse2" class="panel-collapse collapse">
+                    <div id="admin" class="panel-collapse collapse">
 
                         <div class="panel-body">
                             <ul class="list-group">
@@ -146,11 +145,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackRed">Lesson Pack Green</a>
+                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackGreen">Lesson Pack Green</a>
                         </h4>
                     </div>
 
-                    <div id="lessonPackRed" class="panel-collapse collapse">
+                    <div id="lessonPackGreen" class="panel-collapse collapse">
 
 
                         <div class="panel-body">
@@ -185,11 +184,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackGreen">Lesson Pack Orange</a>
+                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackOrange">Lesson Pack Orange</a>
                         </h4>
                     </div>
 
-                    <div id="lessonPackGreen" class="panel-collapse collapse">
+                    <div id="lessonPackOrange" class="panel-collapse collapse">
 
 
                         <div class="panel-body">
@@ -227,7 +226,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackGreen">Lesson Pack Red</a>
+                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackRed">Lesson Pack Red</a>
                         </h4>
                     </div>
 
@@ -269,11 +268,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackGreen">Lesson Pack Yellow</a>
+                            <span class="glyphicon glyphicon-book"></span>   <a data-toggle="collapse" href="#lessonPackYellow">Lesson Pack Yellow</a>
                         </h4>
                     </div>
 
-                    <div id="lessonPackRed" class="panel-collapse collapse">
+                    <div id="lessonPackYellow" class="panel-collapse collapse">
 
 
                         <div class="panel-body">
@@ -306,96 +305,99 @@
             </div>
 
 
-
-
         </div>
     </div>
 
-    @using (Html.BeginForm("Index", "Coach", FormMethod.Post, new { enctype = "multipart/form-data", id = "coachForm" }))
 
-    {
-        @Html.AntiForgeryToken()
+    <div id="additionalResorces" class="hidden">
 
-        <div class="form-horizontal">
-            <h4></h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        @using (Html.BeginForm("Index", "Coach", FormMethod.Post, new { enctype = "multipart/form-data", id = "coachForm" }))
+
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4></h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SecondName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SecondName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @max = "2", @min = "1" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TemplateId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TemplateId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TemplateId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.Label("Image", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" id="Image1" name="Image1" onchange="readURL(this);" />
+                        <br />
+                        <img id="Image1Image" name="Image1Image" alt="your image" src="@Model.Image1Path" style="width:auto;max-width:300px" />
+                        <!--<input type="text" id="Image1Name" name="Image1Name" />-->
+
+                        <h3 id="NewImageHeader" class="hidden">New Image</h3>
+                        <img id="blah" src="#" alt="your image" class="hidden" style="width:auto;max-width:300px" />
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+
+                        <input type="submit" value="Cancel" class="btn btn-danger" />
+
+                    </div>
                 </div>
             </div>
+        }
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SecondName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SecondName, "", new { @class = "text-danger" })
-                </div>
+        <div>
+
+            <div class="alert alert-info" role="alert">
+                Click save and and click the link below to see changes relected in hosted page (opens in new tab)
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @max = "2", @min = "1" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.TemplateId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TemplateId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TemplateId, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <h3>Coach's hosted page available at <a href="../../BSGCoach/@Model.FirstName/@Model.SecondName" target="_blank">BSGCoach/@Model.FirstName/@Model.SecondName</a></h3>
 
 
-            <div class="form-group">
-                @Html.Label("Image", new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="Image1" name="Image1" onchange="readURL(this);" />
-                    <br />
-                    <img id="Image1Image" name="Image1Image" alt="your image" src="@Model.Image1Path" style="width:auto;max-width:300px" />
-                    <!--<input type="text" id="Image1Name" name="Image1Name" />-->
 
-                    <h3 id="NewImageHeader" class="hidden">New Image</h3>
-                    <img id="blah" src="#" alt="your image" class="hidden" style="width:auto;max-width:300px" />
-
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-
-                    <input type="submit" value="Cancel" class="btn btn-danger" />
-
-                </div>
-            </div>
         </div>
-    }
-
-    <div>
-
-        <div class="alert alert-info" role="alert">
-            Click save and and click the link below to see changes relected in hosted page (opens in new tab)
-        </div>
-
-        <h3>Coach's hosted page available at <a href="../../BSGCoach/@Model.FirstName/@Model.SecondName" target="_blank">BSGCoach/@Model.FirstName/@Model.SecondName</a></h3>
-
-
 
     </div>
 
@@ -421,19 +423,23 @@
 
         }
 
-        $("#coachForm").on('submit', function () {
-            var $btn = $(document.activeElement);
+        (function ($) {
 
-            if ($(document.activeElement).val() === "Cancel") {
-                alert("Cancel to be implemented");
+            $("#coachForm").on('submit', function () {
+                var $btn = $(document.activeElement);
+
+                if ($(document.activeElement).val() === "Cancel") {
+                    alert("Cancel to be implemented");
+                }
             }
-        }
-        );
+            );
 
-        $(".coachResources li").click(function () {
-            alert('Click');
-            event.stopPropagation();
+            $(".coachResources li").click(function () {
+                alert('Click');
+                event.stopPropagation();
 
-        });
+            });
+        })(jQuery);
+
     </script>
 </section>
