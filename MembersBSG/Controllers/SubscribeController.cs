@@ -36,13 +36,15 @@ namespace MembersBSG.Controllers
 
             //tx=72F20110MY186281K&st=Completed&amt=1%2e00&cc=GBP&cm=&item_number=1000009
 
-            if (Request["item_number"] != null)
+            if (Request["item_number"] == null)
             {
-                ViewBag.item_number = Request["item_number"].ToString();
+                return RedirectToAction("Fail");
+                //return View("Fail");
+               // ViewBag.item_number = Request["item_number"].ToString();
             }
             else
             {
-                ViewBag.item_number = "9999999999999999999999999999999999999";
+               // ViewBag.item_number = "9999999999999999999999999999999999999";
             }
 
             var claimsIdentity = User.Identity as ClaimsIdentity;

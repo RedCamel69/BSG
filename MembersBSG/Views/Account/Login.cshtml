@@ -4,69 +4,90 @@
     ViewBag.Title = "Log in";
 }
 
-
-
-<div class="row" style="">
-    <div class="alert alert-info" role="alert">
-        Login for admin: admin@bsgelite.com  password: Admin1!
-    </div>
-    <div class="alert alert-info" role="alert">
-        Login for student: student@bsgelite.com  password: Student1!
-    </div>
-    <div class="alert alert-info" role="alert">
-        Login for coach: daveG  password: Coach1!
-    </div>
-    </div>
-    <div class="row">
-       <div >
-            <section id="loginForm">
-                @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))*@
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
+<!-- ******PROMO****** -->
+<section id="promo" class="promo section offset-header">
+    <div class="container text-center">
+        <!--<h2 class="title">bitesize<span class="highlight">Golf</span></h2>-->
+        <p class="intro">
+            Please sign in
+        </p>
+        @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))*@
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
             {
-                   @Html.AntiForgeryToken()
-                    <h2 class="form-signin-heading">Please sign in.</h2>
-                    <hr />
+            @Html.AntiForgeryToken()
+            <h2 class="form-signin-heading">Please sign in.</h2>
+                
                     @Html.ValidationSummary(true)
                     <div class="form-group">
                         @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.UserName)
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Password)
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-2 col-md-12">
                             <div class="checkbox">
                                 @Html.CheckBoxFor(m => m.RememberMe)
                                 @Html.LabelFor(m => m.RememberMe)
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Log in" class="btn btn-lg btn-primary btn-block" />
-                        </div>
+
+                    <div class="btns">
+                        <input type="submit" value="Log in" class="btn btn-cta-secondary" />
+                 
                     </div>
+
+                  
                     <p>
                         @*@Html.ActionLink("Register", "Register") if you don't have a local account.*@
                     </p>
-                }
+        }
+        
+
+        <ul class="meta list-inline">
+            <!--<li><a href="https://github.com/xriley/devAid-Theme" target="_blank">View on GitHub</a></li>
+            <li><a href="http://themes.3rdwavemedia.com/website-templates/devaid-free-bootstrap-theme-developers/" target="_blank">Full Documentation</a></li>
+            <li>Created by: <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> at 3rd Wave Media</li>
+                -->
+        </ul><!--//meta-->
+    </div><!--//container-->
+</section><!--//promo-->
+
+<div class="row">
+    <div>
+        <section id="loginForm">
+           
+        </section>
+    </div>
+    @*
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
             </section>
         </div>
-        @*
-            <div class="col-md-4">
-                <section id="socialLoginForm">
-                    @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
-                </section>
-            </div>
-        *@
+    *@
+</div>
+
+
+<div class="row" style="">
+    @*<div class="alert alert-info" role="alert">
+        Login for admin: admin@bsgelite.com  password: Admin1!
+    </div>
+    <div class="alert alert-info" role="alert">
+        Login for student: student@bsgelite.com  password: Student1!
+    </div>*@
+    <div class="alert alert-info" role="alert">
+        Login for coach: daveG  password: Coach1!
+    </div>
     </div>
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")

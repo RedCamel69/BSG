@@ -14,12 +14,12 @@
 
     @if (@Model.Subscriber)
     {
-        <h1>You're a subscriber - thanks!</h1>
+        <h1 >You're a subscriber - thanks!</h1>
     }
     else
     {
         <h1>You're not a subscriber...</h1>
-        <button><a href="..\..\subscribe">Subscribe Now!</a></button>
+        <button class="btn btn-cta-secondary"><a href="..\..\subscribe">Subscribe Now!</a></button>
 
     }
 
@@ -55,7 +55,7 @@
                                     else
                                     {
                                         <a href="~/Content/Resources/AdminPack/dates and times_.pdf" target="_blank">Dates and Times</a>
-                                        <span class="label label-success">Subscriber Only!</span>
+                                        <span class="label label-success"></span>
 
                                     }
                                 </li>
@@ -70,7 +70,7 @@
                                     else
                                     {
                                         <a href="~/Content/Resources/AdminPack/medical_form_.pdf" target="_blank">Dates and Times</a>
-                                        <span class="label label-success">Subscriber Only!</span>
+                                        <span class="label label-success"></span>
 
                                     }
                                 </li>
@@ -85,7 +85,7 @@
                                     else
                                     {
                                         <a href="~/Content/Resources/AdminPack/payment_form.pdf" target="_blank">Dates and Times</a>
-                                        <span class="label label-success">Subscriber Only!</span>
+                                        <span class="label label-success"></span>
 
                                     }
                                 </li>
@@ -100,25 +100,12 @@
                                     else
                                     {
                                         <a href="~/Content/Resources/AdminPack/registration_form.pdf" target="_blank">Dates and Times</a>
-                                        <span class="label label-success">Subscriber Only!</span>
+                                        <span class="label label-success"></span>
 
                                     }
                                 </li>
 
 
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/AdminPack/medical_form.pdf" target="_blank">Medical Form</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/AdminPack/payment_form.pdf" target="_blank">Dates and Times</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/AdminPack/registration_form.pdf" target="_blank">Medical Form</a>
-                                    <span class="label label-success">New</span>
-                                </li>
 
                             </ul>
                         </div>
@@ -155,18 +142,50 @@
                         <div class="panel-body">
                             <ul class="list-group">
 
+
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Green/4. Green full lesson plan_new.pdf" target="_blank">Green Full Plan</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Green/challenge sheet green.pdf" target="_blank">Challenge Sheet</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Green Lesson Plan</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Green/4. Green full lesson plan_new" target="_blank">Green Lesson Plan</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Green/green report.pdf" target="_blank">Green Report</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Green Challenge Sheet</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Green/challenge sheet green.pdf" target="_blank">Green Challenge Sheet</a>
+                                        <span class="label label-success"></span>
+
+                                    }
+                                </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Green Report</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Green/green report.pdf"  target="_blank">Green Report</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                             </ul>
@@ -195,18 +214,50 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Orange/challenge sheet orange.pdf" target="_blank">Orange Challenge Sheet</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Orange/Orange lesson plan_complete.pdf" target="_blank">Orange Complete Lesson Plan</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Orange Challenge Sheet</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Orange/challenge sheet orange.pdf" target="_blank">Orange Challenge Sheet</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Green/orange report.pdf" target="_blank">Orange Report</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Orange Complete Lesson Plan</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Orange/Orange lesson plan_complete.pdf" target="_blank">Orange Complete Lesson Plan</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Orange Report</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Green/orange report.pdf" target="_blank">Orange Report</a>
+                                        <span class="label label-success"></span>
+
+                                    }
+                                </li>
+
 
                             </ul>
                         </div>
@@ -237,18 +288,50 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Red/1.red_lesson_plan_trad_full.pdf" target="_blank">Full Plan</a>
-                                    <span class="label label-success">New</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Red/challenge sheet red.pdf" target="_blank">Red Challenge Sheet</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Full Plan</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Red/1.red_lesson_plan_trad_full.pdf" target="_blank">Full Plan</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
 
                                 <li class="list-group-item">
-                                    <a href="~/Content/Resources/LessonPack/Red/red report.pdf" target="_blank">Red Report</a>
-                                    <span class="label label-success">New</span>
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Red Challenge Sheet</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Red/challenge sheet red.pdf" target="_blank">Red Challenge Sheet</a>
+                                        <span class="label label-success"></span>
+
+                                    }
                                 </li>
+
+                                <li class="list-group-item">
+                                    @if (!Model.Subscriber)
+                                    {
+                                        <span>Red Report</span>
+                                        <span class="label label-danger">Subscriber Only!</span>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Content/Resources/LessonPack/Red/red report.pdf" target="_blank">Red Report</a>
+                                        <span class="label label-success"></span>
+
+                                    }
+                                </li>
+
 
                             </ul>
                         </div>
@@ -401,45 +484,48 @@
 
     </div>
 
+
+    <div id="padding" style="height:10vh"></div>
+
     <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+        //function readURL(input) {
+        //    if (input.files && input.files[0]) {
+        //        var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        /*.width(150)
-                        .height(200)*/
-                        .removeClass("hidden").addClass("show");
-                };
+        //        reader.onload = function (e) {
+        //            $('#blah')
+        //                .attr('src', e.target.result)
+        //                /*.width(150)
+        //                .height(200)*/
+        //                .removeClass("hidden").addClass("show");
+        //        };
 
-                reader.readAsDataURL(input.files[0]);
+        //        reader.readAsDataURL(input.files[0]);
 
 
-                $("#NewImageHeader").removeClass("hidden");
-                $("#NewImageHeader").addClass("show");
-            }
+        //        $("#NewImageHeader").removeClass("hidden");
+        //        $("#NewImageHeader").addClass("show");
+        //    }
 
-        }
+        //}
 
-        (function ($) {
+        //(function () {
 
-            $("#coachForm").on('submit', function () {
-                var $btn = $(document.activeElement);
+        //    $("#coachForm").on('submit', function () {
+        //        var $btn = $(document.activeElement);
 
-                if ($(document.activeElement).val() === "Cancel") {
-                    alert("Cancel to be implemented");
-                }
-            }
-            );
+        //        if ($(document.activeElement).val() === "Cancel") {
+        //            alert("Cancel to be implemented");
+        //        }
+        //    }
+        //    );
 
-            $(".coachResources li").click(function () {
-                alert('Click');
-                event.stopPropagation();
+        //    $(".coachResources li").click(function () {
+        //        alert('Click');
+        //        event.stopPropagation();
 
-            });
-        })(jQuery);
+        //    });
+        //});
 
     </script>
 </section>
