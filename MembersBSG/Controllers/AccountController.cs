@@ -141,6 +141,7 @@ namespace BSG.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterAsACoach(RegisterAsCoachViewModel vm)
         {
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser() { UserName = vm.UserName };

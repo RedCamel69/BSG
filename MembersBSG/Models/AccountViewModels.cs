@@ -121,8 +121,7 @@ namespace BSG.WebUI.Models
         public CoachReferral Referral { get; set; }
 
         public bool SendUpdates { get; set; }
-        public DateTime SubscriptionEnd { get; set; }
-
+        public DateTime SubscriptionEnd { get; set; }       
 
         //sms, etc
 
