@@ -16,7 +16,6 @@ namespace BSG.Domain.Concrete
         {
 
             
-
             get {
 
                 var list = context.AspNetRoles.ToList();

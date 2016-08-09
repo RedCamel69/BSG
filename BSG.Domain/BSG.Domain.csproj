@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICoachRepository.cs" />
+    <Compile Include="Abstract\IExceptionLoggerRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="AspNetRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -100,6 +101,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Coach.cs" />
+    <Compile Include="Entities\ExceptionLogger.cs" />
     <Compile Include="Entities\Resource.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Model1.Context.cs">

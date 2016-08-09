@@ -225,6 +225,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,6 +245,10 @@
     <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeCountryCodeNumbers.cs" />
     <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeNonDigits.cs" />
     <Compile Include="HtmlHelpers\PhoneNumberValidation\ExcludeRadioTVDramaNumbers.cs" />
+    <Compile Include="Infrastructure\Filters\AllowLocalRequestAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\LogExceptionErrorAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\ProfileActionAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\ProfileResultAttribute.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -729,7 +734,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56372</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56372/</IISUrl>
+          <IISUrl>http://localhost:56372</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:56372/api/test</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

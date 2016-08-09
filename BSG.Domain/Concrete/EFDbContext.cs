@@ -11,5 +11,6 @@ namespace BSG.Domain.Concrete
     public class EFDbContext : DbContext
     {
         public DbSet<AspNetUser> AspNetUsers { get; set; }
+        public DbSet<ExceptionLogger> ExceptionLoggers { get; set; }
     }
 }

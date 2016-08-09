@@ -8,9 +8,11 @@ using BSG.WebUI.Models;
 using System.Web.Security;
 using BSG.Domain.Entities;
 using System;
+using MembersBSG.Infrastructure.Filters;
 
 namespace BSG.WebUI.Controllers
 {
+  
     [Authorize]
     public class AccountController : Controller
     {
@@ -128,7 +130,10 @@ namespace BSG.WebUI.Controllers
 
         //
         // GET: /Account/Register
+        [AllowLocalRequest(false)]
         [AllowAnonymous]
+        [ProfileAction]
+        [ProfileResult]
         public ActionResult RegisterAsACoach()
         {
             return View();
@@ -139,6 +144,7 @@ namespace BSG.WebUI.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [LogExceptionError]
         public async Task<ActionResult> RegisterAsACoach(RegisterAsCoachViewModel vm)
         {
 
