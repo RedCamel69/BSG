@@ -9,6 +9,7 @@ using System.Web.Security;
 using BSG.Domain.Entities;
 using System;
 using MembersBSG.Infrastructure.Filters;
+using AutoMapper;
 
 namespace BSG.WebUI.Controllers
 {
@@ -152,31 +153,33 @@ namespace BSG.WebUI.Controllers
             {
                 var user = new ApplicationUser() { UserName = vm.UserName };
 
-                //extended prtops
-                user.WebSite = vm.WebSite;
-                user.FirstName = vm.FirstName;
-                user.SecondName = vm.SecondName;
-                user.Phone = vm.Phone;
-                user.MobilePhone = vm.MobilePhone;
+                user = Mapper.Map<RegisterAsCoachViewModel, ApplicationUser>(vm);
 
-                user.Address = new CoachAddress()
-                {
-                    AddressLine1 = vm.Address.AddressLine1,
-                    AddressLine2=vm.Address.AddressLine2,
-                    AddressLine3=vm.Address.AddressLine3,
-                    City=vm.Address.City,
-                    Country = vm.Address.Country,
-                    County=vm.Address.County,
-                    PostalCode=vm.Address.PostalCode
+                ////extended prtops
+                //user.WebSite = vm.WebSite;
+                //user.FirstName = vm.FirstName;
+                //user.SecondName = vm.SecondName;
+                //user.Phone = vm.Phone;
+                //user.MobilePhone = vm.MobilePhone;
 
-                };
-                user.Coach1 = vm.Coach1;
-                //user.Coach2 = vm.Coach2;
+                //user.Address = new CoachAddress()
+                //{
+                //    AddressLine1 = vm.Address.AddressLine1,
+                //    AddressLine2=vm.Address.AddressLine2,
+                //    AddressLine3=vm.Address.AddressLine3,
+                //    City=vm.Address.City,
+                //    Country = vm.Address.Country,
+                //    County=vm.Address.County,
+                //    PostalCode=vm.Address.PostalCode
 
-                user.Referral = CoachReferral.Email.ToString();
+                //};
+                //user.Coach1 = vm.Coach1;
+                ////user.Coach2 = vm.Coach2;
 
-                user.Subscriber = false;
-                user.SubscriptionEnd = new DateTime(3000,1,1);
+                //user.Referral = CoachReferral.Email.ToString();
+
+                //user.Subscriber = false;
+                //user.SubscriptionEnd = new DateTime(3000,1,1);
 
                 //user.Roles.Add(new IdentityUserRole() {  UserId=user.Id, RoleId= Roles.GetAllRoles(). })
 
