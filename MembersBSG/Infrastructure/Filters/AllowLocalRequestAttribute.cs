@@ -13,6 +13,7 @@ namespace MembersBSG.Infrastructure.Filters
 
         public AllowLocalRequestAttribute(bool allowedParam)
         {
+
             localAllowed = allowedParam;
         }
 

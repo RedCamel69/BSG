@@ -149,7 +149,7 @@ namespace BSG.WebUI.Controllers
         public async Task<ActionResult> RegisterAsACoach(RegisterAsCoachViewModel vm)
         {
 
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
             {
                 var user = new ApplicationUser() { UserName = vm.UserName };
 

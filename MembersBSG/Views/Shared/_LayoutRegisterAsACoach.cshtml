@@ -102,10 +102,18 @@
         <!-- ******FOOTER****** -->
         <footer class="footer">
             <div class="container text-center">
-                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Copyright © Btesize Golf All Rights Reserved. No part of this web page may be reproduced in any way, or by any means, without the prior written permission of D Gosling.
-Privacy Note: All personal consumer information submitted through this web site will be held confidential within the company.
-</small>
+                <div class="row">
+                    <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+                    <small class="copyright col-xs-9">
+                        Copyright © Btesize Golf All Rights Reserved. No part of this web page may be reproduced in any way, or by any means, without the prior written permission of D Gosling.
+                        Privacy Note: All personal consumer information submitted through this web site will be held confidential within the company.
+                    </small>
+                    <a href="#" class="back-to-top col-xs-2" style="display: inline;">
+
+                        <i class="glyphicon glyphicon-chevron-up fa-5x pull-left"></i>
+
+                    </a>
+                </div>
             </div><!--//container-->
         </footer><!--//footer-->
 
@@ -123,6 +131,11 @@ Privacy Note: All personal consumer information submitted through this web site 
     <script type="text/javascript" src="~/assets/plugins/prism/prism.js"></script>
     <script type="text/javascript" src="~/assets/js/main.js"></script>     
 
+ 
+
+
+   
+
     <script type="text/javascript">
         $(document).on('click', '.navbar-collapse.in', function (e) {
             if ($(e.target).is('a')) {
@@ -133,5 +146,21 @@ Privacy Note: All personal consumer information submitted through this web site 
 
     @Scripts.Render("~/bundles/jqueryval")
 
+    <style type="text/css">
+        .back-to-top {
+            background: none;
+            margin: 0;
+            /*position: fixed;*/
+            bottom: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            z-index: 100;
+            display: none;
+            text-decoration: none;
+            color: #17baef;
+            background-color:transparent;
+        }
+    </style>
 </body>
 </html>

@@ -109,18 +109,26 @@ namespace BSG.WebUI.Models
 
         //[ExcludeNonDigits(ErrorMessage = "Please enter a valid mobile phone number")]
         //[ExcludeOFiveHundredRange(ErrorMessage = "Please enter a valid mobile phone number")]
+        [Display(Name = "Mobile")]
         public string MobilePhone { get; set; }
+
+        [Display(Name = "Golf Facility")]
         public string GolfFacilityName { get; set; }
 
         
         public CoachAddress Address { get; set; }
 
+        [Display(Name = "Coach 1")]
         public string Coach1 { get; set; }
+
+        [Display(Name = "Coach 2")]
         public string Coach2 { get; set; }
 
         public CoachReferral Referral { get; set; }
 
+        [Display(Name = "Send Updates")]
         public bool SendUpdates { get; set; }
+
         public DateTime SubscriptionEnd { get; set; }       
 
         //sms, etc

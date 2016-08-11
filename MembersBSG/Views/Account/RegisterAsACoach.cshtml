@@ -15,6 +15,48 @@
     //}
 }
 
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <p>Step 1: About </p>
+        </div>
+
+        <div class="item">
+            <p>2222222222</p>
+        </div>
+
+        <div class="item">
+            <p>3333333333</p>
+        </div>
+
+        <div class="item">
+            <p>4444444444</p>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
 
 @using (Html.BeginForm()) 
 {
@@ -79,14 +121,13 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="#step2Registration" class="scrollto btn btn-default" onclick="ShowSection('step2Registration')" >Next >></a>
-                    <input type="button" value="Next >>" class="btn btn-default">
+                    <a href="#step2Registration" class="scrollto btn btn-default showMoreReg" onclick="ShowSection('step2Registration')" >Next >></a>
                 </div>
             </div>
 
         </div>
 
-        <div id="step2Registration" style="padding-top:5vh" class="hidden">
+        <div id="step2Registration" style="padding-top:1vh" class="hidden">
             <h4>Step 2: Your Details</h4>
 
             <div class="form-group">
@@ -131,8 +172,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="#step3Registration" class="scrollto btn btn-default" onclick="ShowSection('step3Registration')">Next >></a>
-                    <input type="button" value="Next >>" class="btn btn-default">
+                    <a href="#step3Registration" class="scrollto btn btn-default showMoreReg" onclick="ShowSection('step3Registration')">Next >></a>      
                 </div>
             </div>
 
@@ -233,15 +273,35 @@
         </div>
 }
 
-<div>
-    @Html.ActionLink("Cancel", "Index","Home")
-</div>
 
+<script src="~/assets/plugins/jquery-1.11.3.min.js"></script>
 
 <script type="text/javascript">
 
     function ShowSection(e) {
+
+        $("form").valid();
+
         $("#" + e).removeClass("hidden");
+
+        //if ($('#UserName, #Email').valid()) {
+
+         //   $("#" + e).removeClass("hidden");
+        //}
+
+        
     }
 
+
+    $(document).ready(function () {
+
+        $(".showMoreReg").click(function () {
+            $(this).closest(".form-group").addClass("hidden");
+        });
+
+        $("form").validate({
+        })
+
+    });
 </script>
+
