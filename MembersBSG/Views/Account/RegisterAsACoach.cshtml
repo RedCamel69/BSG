@@ -121,7 +121,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="#step2Registration" class="scrollto btn btn-default showMoreReg" onclick="ShowSection('step2Registration')" >Next >></a>
+                    <a href="#step2Registration" class="scrollto btn btn-default showMoreReg" onclick="RegAC.ShowSection('step2Registration')" >Next >></a>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="#step3Registration" class="scrollto btn btn-default showMoreReg" onclick="ShowSection('step3Registration')">Next >></a>      
+                    <a href="#step3Registration" class="scrollto btn btn-default showMoreReg" onclick="RegAC.ShowSection('step3Registration')">Next >></a>      
                 </div>
             </div>
 
@@ -278,19 +278,36 @@
 
 <script type="text/javascript">
 
-    function ShowSection(e) {
 
-        $("form").valid();
+    var RegAC = (function () {
 
-        $("#" + e).removeClass("hidden");
+        var myPrivateVar, myPrivateMethod;
 
-        //if ($('#UserName, #Email').valid()) {
+        // A private counter variable
+        myPrivateVar = 0;
 
-         //   $("#" + e).removeClass("hidden");
-        //}
+        showSection = function(e) {
+            $("form").valid();
+            $("#" + e).removeClass("hidden");
+        };
 
-        
-    }
+
+        return {
+
+            // A public variable
+            myPublicVar: "foo",
+
+            // A public function utilizing privates
+            ShowSection: function (e) {
+
+                // Call our private method using bar
+                showSection(e);
+
+            }
+        };
+
+    })();
+
 
 
     $(document).ready(function () {
